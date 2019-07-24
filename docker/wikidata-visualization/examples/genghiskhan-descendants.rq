@@ -1,0 +1,36 @@
+# Descendants of Genghis Khan
+
+SELECT
+?personItem ?englishName ?chineseName ?mongolianName ?gender
+?childItem ?childEnglishName ?childChineseName ?childMongolianName
+?CBDB ?depth
+WHERE
+{
+  SERVICE gas:service {
+    gas:program gas:gasClass "com.bigdata.rdf.graph.analytics.SSSP" ;
+                gas:in wd:Q720 ;
+                gas:traversalDirection "Forward" ;
+                gas:out ?personItem ;
+                gas:out1 ?depth ;
+                gas:maxIterations 5 ;
+                gas:linkType wdt:P40 .
+  }
+  OPTIONAL { ?personItem rdfs:label ?englishName .
+             FILTER( LANG(?englishName) = "en" ) . }
+  OPTIONAL { ?personItem rdfs:label ?chineseName .
+             FILTER( LANG(?chineseName) = "zh" ) . }
+  OPTIONAL { ?personItem rdfs:label ?mongolianName .
+             FILTER( LANG(?mongolianName) = "mn" ) . }
+  OPTIONAL { ?personItem wdt:P40 ?childItem .
+    OPTIONAL { ?childItem rdfs:label ?childEnglishName .
+               FILTER( LANG(?childEnglishName) = "en" ) . }
+    OPTIONAL { ?childItem rdfs:label ?childChineseName .
+               FILTER( LANG(?childChineseName) = "zh" ) . }
+    OPTIONAL { ?childItem rdfs:label ?childMongolianName .
+               FILTER( LANG(?childMongolianName) = "mn" ) . }
+  }
+  OPTIONAL { ?personItem wdt:P21 [ rdfs:label ?gender ] .
+             FILTER( LANG(?gender) = "en" ) . }
+  OPTIONAL { ?personItem wdt:P497 ?CBDB . }
+}
+ORDER BY ?depth

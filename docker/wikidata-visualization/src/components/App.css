@@ -1,0 +1,381 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.app-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.app-titles {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  margin-right: 8px;
+}
+
+.ace_editor {
+  border: 1px solid #ddd;
+  margin-top: -5px;
+  font-family: 'Source Code Pro', monospace !important;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.clickable-icon {
+  cursor: pointer;
+  color: #999;
+}
+
+.clickable-icon:hover {
+  color: #337ab7;
+}
+
+.query-icon {
+  margin-left: -3px;
+  margin-right: -3px;
+}
+
+.query-icon-fullscreen {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.toolbar-icon {
+  padding: 5px 2px 2px 2px;
+}
+
+.clip-loader {
+  vertical-align: -webkit-baseline-middle;
+  margin-right: 10px;
+}
+
+.grey-text {
+  color: #999;
+}
+
+.padding-5 {
+  padding: 5px;
+}
+
+.padding-5-left {
+  padding-left: 5px;
+}
+
+.padding-5-top {
+  padding-top: 5px;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.no-padding-left {
+  padding-left: 0px !important;
+}
+
+.no-padding-right {
+  padding-right: 0px !important;
+}
+
+.info-text {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.chart-navs {
+  padding-bottom: 10px;
+}
+
+/* overwrite boostrap-slider default width */
+.slider.slider-horizontal {
+  width: 100% !important;
+}
+
+.color-palette {
+  float: left;
+  padding: 2px 0 0 0;
+  margin: 0;
+  clear: left;
+  width: 100%;
+}
+
+.color-palette div {
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  height: 14px;
+  width: 10%;
+}
+
+.color-palette-text {
+  font-size: 12px;
+  color: #aaa;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0 0 -2px 0;
+}
+
+/* overwrite Bootstrap styles */
+.panel-heading > .panel-title {
+  font-size: 12px;
+}
+
+.control-label {
+  font-size: 12px;
+}
+
+.btn-default {
+  background-image: none !important;
+}
+
+.btn-primary {
+  background-image: none !important;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-content {
+  flex: 1;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.site-content:after {
+  content: 'nothing';
+  display: block;
+  margin-top: 30px;
+  height: 0;
+  visibility: hidden;
+}
+
+.footer {
+  background-color: #f6f6f6;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.d3ToolTip {
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  min-width: 50px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: left;
+  line-height: 1.3;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, .15);
+  opacity: 0.9;
+  z-index: 2000;
+}
+.d3ToolTip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -12px;
+}  
+
+.d3ToolTip span {
+  font-size: 12px;
+}
+
+.sm-badge {
+  font-size: 10px !important;
+  vertical-align: text-top ;
+}
+
+.sm-badge .label {
+  font-weight: normal;
+}
+
+.sm-badge a:link,
+.sm-badge a:visited,
+.sm-badge a:hover,
+.sm-badge a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.zoom-button {
+  transform: translate(20px, -50px);
+  display: block !important;
+}
+
+.hide-side {
+  display: none;
+}
+
+/* fix display issue on iOS */
+input[type="text"] {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -webkit-appearance: none;
+}
+
+.setting-title {
+  color: #999;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.setting-row {
+  margin-bottom: 8px;
+}
+
+.setting-row:last-child {
+  margin-bottom: 0px;
+}
+
+.setting-row .btn-sm {
+  font-size: 14px !important;
+}
+
+/* overwrite select2 box height */
+.select2-container .select2-selection--single {
+  height: 30px !important; 
+}
+
+#data-table input[type="text"]:focus {
+  border-color: #337ab7 !important;
+  -webkit-appearance: none;
+  box-shadow: 0 0 0 1px #337ab7;
+}
+
+.ReactTable {
+  border: none !important;
+}
+
+.ReactTable .rt-thead.-header {
+  box-shadow: none !important;
+}
+
+.ReactTable .rt-thead.-filters {
+  border: none !important;
+}
+
+.ReactTable .-pagination {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ReactTable .rt-thead.-filters .rt-th {
+  border-right: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.ReactTable .rt-thead.-filters .rt-th:last-child {
+  border-right: none !important;
+}
+
+.ReactTable .rt-tbody .rt-td {
+  border-right: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.ReactTable .rt-tbody .rt-td:last-child {
+  border-right: none !important;
+}
+
+.react-datepicker-wrapper input {
+  width: 100%;
+}
+
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+.react-datepicker__header__dropdown {
+  margin-top: 5px;
+}
+
+/* react-datepicker uses rem unit in default */
+.react-datepicker {
+  font-size: 12px !important;
+}
+
+.react-datepicker__header {
+  padding-top: 0.8em !important;
+}
+
+.react-datepicker__month {
+  margin: 0.4em 1em !important;
+}
+
+.react-datepicker__day-name, .react-datepicker__day {
+  width: 1.9em !important;
+  line-height: 1.9em !important;
+  margin: 0.166em !important;
+}
+
+.react-datepicker__current-month {
+  font-size: 12px !important;
+}
+
+.react-datepicker__navigation {
+  top: 1em !important;
+  line-height: 1.7em !important;
+  border: 0.45em solid transparent !important;
+}
+
+.react-datepicker__navigation--previous {
+  border-right-color: #ccc !important;
+  left: 1em !important;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: #ccc !important;
+  right: 1em !important;
+}
+
+.leaflet-div-icon {
+  background-color: transparent !important;
+  border: none !important;
+  width: 300px !important;
+}

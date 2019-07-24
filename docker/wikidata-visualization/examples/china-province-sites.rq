@@ -1,0 +1,28 @@
+# National Historical and Cultural Sites by province of China
+
+SELECT
+?provinceItem ?englishName ?chineseName ?numOfSites ?provinceCoord
+?sampleSiteItem ?sampleSite
+WHERE
+{
+  hint:Query hint:optimizer "None" .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "zh" . 
+                           ?sampleSiteItem rdfs:label ?sampleSite . }
+  {
+    SELECT
+    ?provinceItem ?englishName ?chineseName (COUNT(*) AS ?numOfSites) ?provinceCoord
+    (SAMPLE(?siteItem) AS ?sampleSiteItem)
+    WHERE {
+      ?siteItem wdt:P1435 wd:Q1188574 ; # Chinese National Historical and Cultural Site
+                    wdt:P131+ ?provinceItem .
+      ?provinceItem wdt:P31/wdt:P279 wd:Q13396669 . # province-level division in China
+      OPTIONAL { ?provinceItem wdt:P625 ?provinceCoord . }
+      OPTIONAL { ?provinceItem rdfs:label ?englishName .
+                 FILTER( LANG(?englishName) = "en" ) . }
+      OPTIONAL { ?provinceItem rdfs:label ?chineseName .
+                 FILTER( LANG(?chineseName) = "zh" ) . }
+    }
+    GROUP BY ?provinceItem ?englishName ?chineseName ?provinceCoord
+  }
+}
+ORDER BY DESC(?numOfSites)
