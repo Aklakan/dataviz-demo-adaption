@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:1.17.2
 MAINTAINER Claus Stadler <cstadler@informatik.uni-leipzig.de>
 
 FROM nginx

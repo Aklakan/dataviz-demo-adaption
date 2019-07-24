@@ -11,5 +11,5 @@ else
 fi
 
 
-nginx
+nginx -g 'daemon off;'
 
