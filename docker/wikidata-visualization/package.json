@@ -62,7 +62,7 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=/wikidata-visualization react-scripts build",
+    "build": "PUBLIC_URL=/dataviz react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "prepare": "patch-package",
