@@ -6,7 +6,7 @@ services:
     build: ./
     container_name: dataviz
     environment:
-      - PUBLIC_URL=http://sparklify.iswc2019.aksw.org/sparql
+      - ENDPOINT_URL=http://sparklify.iswc2019.aksw.org/sparql
 #    volumes:
 #      - lgd-db-vol:/var/lib/postgresql/data
     restart: always
