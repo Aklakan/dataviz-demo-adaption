@@ -12,8 +12,9 @@ services:
     restart: always
     ports:
       - 7530:80
-    networks:
-      - host
+    network_mode: host
+#    networks:
+#      - host
 
 
 #networks:
