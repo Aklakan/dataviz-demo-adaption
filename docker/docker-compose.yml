@@ -1,0 +1,23 @@
+version: '2.1'
+
+services:
+
+  dataviz:
+    build: ./
+    container_name: dataviz
+    environment:
+      - PUBLIC_URL=http://sparklify.iswc2019.aksw.org/sparql
+#    volumes:
+#      - lgd-db-vol:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - 7530:80
+    networks:
+      - host
+
+
+#networks:
+#  lgd-net:
+#    external:
+#      name: lgd-net
+
