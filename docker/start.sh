@@ -5,7 +5,9 @@ echo "Using SPARQL endpoint: ${ENDPOINT_URL}"
 
 
 FILE=`grep -Rail localhost:7531/sparql /var/www/html/dataviz/static/js | grep js$`
-echo "Replacing endpoint in file $FILE"
+if [ -f "$FILE" ]; then
+  echo "Replacing endpoint in file $FILE"
+fi
 
 sed -i 's|http://localhost:7531/sparql|${ENDPOINT_URL}|g' "$FILE"
 
