@@ -1,0 +1,21 @@
+
+MAP EXAMPLE
+SELECT * { ?s <http://www.opengis.net/ont/geosparql#asWKT> ?w }
+
+
+MAP WITH CIRCLE EXAMPLE
+SELECT ?s ?wkt (<http://www.w3.org/2001/XMLSchema#double>(?rt) AS ?rti){
+  ?s <http://dbpedia.org/ontology/country> ?c .
+  ?s <http://dbpedia.org/ontology/Work/runtime> ?rt .
+  ?c <http://www.opengis.net/ont/geosparql#geometry> ?g .
+  ?g <http://www.opengis.net/ont/geosparql#asWKT> ?wkt .
+}
+
+BAR CHART EXAMPLE
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?c (xsd:double(?rt) AS ?x) {
+[] a <http://dbpedia.org/ontology/Film> ;
+<http://dbpedia.org/ontology/country> ?c ;
+<http://dbpedia.org/ontology/Work/runtime> ?rt
+} LIMIT 100
+
